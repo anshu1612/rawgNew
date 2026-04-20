@@ -12,7 +12,7 @@ class APIClient {
   }
 
   getAll = (config) =>
-    axiosInstance.get(this.endpoint,config).then((res) => res.data.results);
+    axiosInstance.get(this.endpoint,config).then((res) => res.data);
 }
 
 export default APIClient;
