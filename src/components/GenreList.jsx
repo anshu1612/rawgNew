@@ -11,7 +11,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import getCroppedImageUrl from "../services/image-url";
-const GenreList = ({ selectedGenre, onSelectGenre }) => {
+const GenreList = ({ selectedGenreId, onSelectGenre }) => {
   const { data, error, isLoading } = useGenre();
   if (isLoading) return <Spinner />;
   if (error) return null;
@@ -33,7 +33,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }) => {
               <Button
                 whiteSpace="normal"
                 textAlign="left"
-                fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
+                fontWeight={genre.id === selectedGenreId ? "bold" : "normal"}
                 fontSize="lg"
                 variant="link"
                 onClick={() => onSelectGenre(genre)}
