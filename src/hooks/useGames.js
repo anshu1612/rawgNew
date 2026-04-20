@@ -1,9 +1,9 @@
 import apiClient from "../services/api-client";
-import useData from "./useData";
 import { useQuery } from "@tanstack/react-query";
+
 const useGames = (gameQuery) =>
   useQuery({
-    queryKey: ["games",gameQuery],
+    queryKey: ["games", gameQuery],
     queryFn: () =>
       apiClient
         .get("/games", {
@@ -16,6 +16,5 @@ const useGames = (gameQuery) =>
         })
         .then((res) => res.data.results),
   });
- 
 
 export default useGames;
