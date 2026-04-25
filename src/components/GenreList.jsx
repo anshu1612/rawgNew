@@ -1,5 +1,5 @@
 import React from "react";
-import useGenre from "../hooks/useGenre";
+import useGenres from "../hooks/useGenres";
 import {
   Button,
   Heading,
@@ -12,14 +12,14 @@ import {
 } from "@chakra-ui/react";
 import getCroppedImageUrl from "../services/image-url";
 const GenreList = ({ selectedGenreId, onSelectGenre }) => {
-  const { data, error, isLoading } = useGenre();
+  const { data, error, isLoading } = useGenres();
   if (isLoading) return <Spinner />;
   if (error) return null;
   return (
     <>
       <Heading fontSize="2xl" marginBottom={3}>
         Genres
-      </Heading> 
+      </Heading>
       <List>
         {data?.results.map((genre) => (
           <ListItem key={genre.id} paddingY="5px">
